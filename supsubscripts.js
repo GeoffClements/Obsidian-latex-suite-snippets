@@ -16,7 +16,7 @@
     { trigger: /\\mathbf{([A-Za-z])}(\d)/, replacement: "\\mathbf{[[0]]}_{[[1]]}", options: "rmA" },
 
     {
-        trigger: "([2-9]?)sqrt", replacement: (match) => {
+        trigger: "([2-9|n|m|k]?)sqrt", replacement: (match) => {
             let order = match[1];
 
             if (order != "") order = "[" + order + "]";
