@@ -24,7 +24,7 @@
         options: "rmA"
     },
 
-    { trigger: "dd", replacement: "\\dd ", options: "mA" },
+    { trigger: "([^a-zA-Z])dd", replacement: "[[0]]\\dd ", options: "rmA" },
 
     { trigger: "pu", replacement: "\\pu{$0}", options: "mA" },
 ]
