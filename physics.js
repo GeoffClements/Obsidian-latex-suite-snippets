@@ -1,4 +1,4 @@
-// reuires latex physics module
+// requires latex physics module
 [
     { trigger: "kbt", replacement: "k_{B}T", options: "mA" },
     { trigger: "msun", replacement: "M_{\\odot}", options: "mA" },
