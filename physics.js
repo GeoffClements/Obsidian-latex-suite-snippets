@@ -17,7 +17,7 @@
             let order = match[1];
             let partial = match[2];
 
-            if (order != "") order = "[" + order + "]";
+            if (order != "") order = `[${order}]`;
 
             return "\\" + partial + "dv" + order + "{$0}{$1}";
         },

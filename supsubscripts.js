@@ -19,7 +19,7 @@
         trigger: "([2-9|n|m|k]?)sqrt", replacement: (match) => {
             let order = match[1];
 
-            if (order != "") order = "[" + order + "]";
+            if (order != "") order = `[${order}]`;
             return "\\sqrt" + order + "{$0}";
         },
         options: "rmA"
