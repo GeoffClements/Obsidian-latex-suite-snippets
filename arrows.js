@@ -1,6 +1,6 @@
 [
     {
-        trigger: /(!|N|n|c|C|x|X)*(L|l|;|u|d)(lr|l|r)a/, replacement: (match) => {
+        trigger: /(!|N|n|c|C|x|X)?(L|l|;|u|d)(lr|l|r)a/, replacement: (match) => {
             let cancel = match[1];
             let style = match[2];
             let direction = match[3];
@@ -54,7 +54,7 @@
     },
 
     {
-        trigger: /(!|N|n|c|C|x|X)*(L|l|;|u|d)(lr|l|r)a/, replacement: (match) => {
+        trigger: /(!|N|n|c|C|x|X)?(L|l|;|u|d)(lr|l|r)a/, replacement: (match) => {
             let cancel = match[1];
             let style = match[2];
             let direction = match[3];
