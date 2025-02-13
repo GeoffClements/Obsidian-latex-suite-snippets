@@ -10,6 +10,8 @@
     { trigger: "brk", replacement: "\\braket{ $0 | $1 } $2", options: "mA" },
     { trigger: "outer", replacement: "\\ket{${0:\\psi}} \\bra{${0:\\psi}} $1", options: "mA" },
 
+    { trigger: "grad", replacement: "\\grad{$0}", options: "mA" },
+
     // derivatives and partial derivatives
     {
         trigger: "([2-9]?)(p?)dv",
