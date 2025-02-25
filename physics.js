@@ -11,6 +11,7 @@
     { trigger: "outer", replacement: "\\ket{${0:\\psi}} \\bra{${0:\\psi}} $1", options: "mA" },
 
     { trigger: "([^\\\\])grad", replacement: "[[0]]\\grad{$0}", options: "rmA" },
+    { trigger: "([^\\\\])curl", replacement: "[[0]]\\curl{\\mathbf{$0}}", options: "rmA" },
 
     // derivatives and partial derivatives
     {
