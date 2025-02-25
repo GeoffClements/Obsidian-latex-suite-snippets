@@ -50,7 +50,7 @@
 
             return cancel_prefix + style + direction + "arrow" + cancel_suffix;
 
-        }, options: "rtA"
+        }, options: "rt"
     },
 
     {
@@ -104,6 +104,6 @@
 
             return cancel_prefix + style + direction + "arrow" + cancel_suffix;
 
-        }, options: "rmA"
+        }, options: "rm"
     },
 ]
