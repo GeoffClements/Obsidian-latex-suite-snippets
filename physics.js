@@ -10,7 +10,7 @@
     { trigger: "brk", replacement: "\\braket{ $0 | $1 } $2", options: "mA" },
     { trigger: "outer", replacement: "\\ket{${0:\\psi}} \\bra{${0:\\psi}} $1", options: "mA" },
 
-    { trigger: "[^\\\\]grad", replacement: "\\grad{$0}", options: "rmA" },
+    { trigger: "([^\\\\])grad", replacement: "[[0]]\\grad{$0}", options: "rmA" },
 
     // derivatives and partial derivatives
     {
@@ -26,7 +26,7 @@
         options: "rmA"
     },
 
-    { trigger: "([^\])dd", replacement: "[[0]]\\dd{$0}", options: "rmA" },
+    { trigger: "([^\\\\])dd", replacement: "[[0]]\\dd{$0}", options: "rmA" },
     
     { trigger: "\\\\(${GREEK})lapl", replacement: "\\laplacian{\\[[0]]}$0", options: "rmA" },
     { trigger: "([^${GREEK}])lapl", replacement: "[[0]]\\laplacian ", options: "rmA" },
