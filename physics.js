@@ -27,9 +27,9 @@
         options: "rmA"
     },
 
-    { trigger: "([^\\\\a-zA-Z])dd", replacement: "[[0]]\\dd{$0}", options: "rmA" },
+    { trigger: "([^\\\\])([a-zA-Z])dd", replacement: "[[0]]\\dd{[[1]]}$0", options: "rmA" },
     
-    { trigger: "\\\\(${GREEK})lapl", replacement: "\\laplacian{\\[[0]]}$0", options: "rmA" },
+    { trigger: "\\\\(${GREEK})lapl", replacement: "\\laplacian{\\[[0]]}{$0}", options: "rmA" },
     { trigger: "([^${GREEK}])lapl", replacement: "[[0]]\\laplacian ", options: "rmA" },
 
     { trigger: "pu", replacement: "\\pu{$0}", options: "mA" },

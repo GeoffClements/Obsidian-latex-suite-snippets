@@ -11,12 +11,14 @@
     { trigger: "xist", replacement: "\\exists", options: "mA", priority: 1 },
     { trigger: "nxist", replacement: "\\nexists", options: "mA", priority: 1 },
 
+    // repeat upper-case letters trigger mathbb or mathcal
+    { trigger: /([A-GI-KM-Z])\1/, replacement: "\\mathbb{[[0]]}", options: "mA" },
     { trigger: "LL", replacement: "\\mathcal{L}", options: "mA" },
     { trigger: "HH", replacement: "\\mathcal{H}", options: "mA" },
-    { trigger: "CC", replacement: "\\mathbb{C}", options: "mA" },
-    { trigger: "RR", replacement: "\\mathbb{R}", options: "mA" },
-    { trigger: "ZZ", replacement: "\\mathbb{Z}", options: "mA" },
-    { trigger: "NN", replacement: "\\mathbb{N}", options: "mA" },
+
+    { trigger: "bb", replacement: "\\mathbb{$0}", options: "mA" },
+    { trigger: "cal", replacement: "\\mathcal{$0}", options: "mA" },
+
 
     { trigger: "Re", replacement: "\\mathrm{Re}", options: "mA" },
     { trigger: "Im", replacement: "\\mathrm{Im}", options: "mA" },

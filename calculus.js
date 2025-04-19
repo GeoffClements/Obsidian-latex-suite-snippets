@@ -11,4 +11,6 @@
     { trigger: "iiint", replacement: "\\iiint", options: "mA" },
     { trigger: "oinf", replacement: "\\int_{0}^{\\infty}$0\\,\\mathrm{d}${1:x}$2", options: "mA" },
     { trigger: "infi", replacement: "\\int_{-\\infty}^{\\infty}$0\\,\\mathrm{d}${1:x}$2", options: "mA" },
+
+    { trigger: /d([a-ce-z])d([a-ce-z])/, replacement: "\\dv{[[0]]}{[[1]]}$1", options: "mA" },
 ]
