@@ -1,6 +1,7 @@
 // requires latex physics module
 [
     { trigger: "kbt", replacement: "k_{B}T", options: "mA" },
+    { trigger: "kbt", replacement: "k_{B}T", options: "mA" },
     { trigger: "msun", replacement: "M_{\\odot}", options: "mA" },
     { trigger: "dag", replacement: "^{\\dagger}", options: "mA" },
     { trigger: "o+", replacement: "\\oplus ", options: "mA" },
@@ -33,4 +34,5 @@
     { trigger: "([^${GREEK}])lapl", replacement: "[[0]]\\laplacian ", options: "rmA" },
 
     { trigger: "pu", replacement: "\\pu{$0}", options: "mA" },
+    { trigger: "h-", replacement: "\\hbar", options: "mA" },
 ]
