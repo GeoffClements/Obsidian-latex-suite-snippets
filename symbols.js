@@ -21,6 +21,7 @@
     { trigger: ">>", replacement: "\\gg", options: "mA" },
     { trigger: "<<", replacement: "\\ll", options: "mA" },
     { trigger: "simm", replacement: "\\sim", options: "mA" },
-    { trigger: "sim=", replacement: "\\simeq", options: "mA" },
+    { trigger: "~=", replacement: "\\simeq", options: "mA" },
+    { trigger: "~~", replacement: "\\approx", options: "mA" },
     { trigger: "prop", replacement: "\\propto", options: "mA" },
 ]
