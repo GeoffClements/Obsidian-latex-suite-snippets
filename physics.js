@@ -35,4 +35,10 @@
 
     { trigger: "pu", replacement: "\\pu{$0}", options: "mA" },
     { trigger: "h-", replacement: "\\hbar", options: "mA" },
+
+    // vectors
+    { trigger: "([a-zA-Z])vec", replacement: "\\vb{[[0]]}", options: "rmA" },
+    { trigger: "vec", replacement: "\\vb{$0}", options: "rmA" },
+    { trigger: "vdot", replacement: "\\vdot", options: "rmA" },
+    { trigger: "cross", replacement: "\\cross", options: "rmA" },
 ]
