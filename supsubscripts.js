@@ -1,8 +1,8 @@
 [
     { trigger: "^", replacement: "^{$0}$1", options: "mA" },
     { trigger: "_", replacement: "_{$0}$1", options: "mA" },
-    { trigger: /([A-Za-z])(\d)/, replacement: "[[0]]_{[[1]]}", options: "rmA", description: "Auto number subscript", priority: -1 },
-    { trigger: /([A-Za-z])_(\d\d)/, replacement: "[[0]]_{[[1]]}", options: "rmA" },
+    // { trigger: /([A-Za-z])(\d)/, replacement: "[[0]]_{[[1]]}", options: "rmA", description: "Auto number subscript", priority: -1 },
+    // { trigger: /([A-Za-z])_(\d\d)/, replacement: "[[0]]_{[[1]]}", options: "rmA" },
     { trigger: /([^A-Za-z][A-Za-z])([A-Za-z])_/, replacement: "[[0]]_{[[1]]}", options: "rmA", priority: 1 },
     { trigger: "inv", replacement: "^{-1}", options: "mA" },
     { trigger: "stx", replacement: "_\\text{$0}", options: "mA" },
@@ -15,6 +15,7 @@
     { trigger: /\\vec{([A-Za-z])}(\d)/, replacement: "\\vec{[[0]]}_{[[1]]}", options: "rmA" },
     { trigger: /\\mathbf{([A-Za-z])}(\d)/, replacement: "\\mathbf{[[0]]}_{[[1]]}", options: "rmA" },
 
+    // Auto square root with optional order
     {
         trigger: "([2-9|n|m|k]?)sqr", replacement: (match) => {
             let order = match[1];
@@ -23,5 +24,25 @@
             return "\\sqrt" + order + "{$0}";
         },
         options: "rmA"
+    },
+
+    // Auto letter subscript
+    //
+    // x3 -> x_{3}, \alpha3 -> \alpha_{3}, ignores \approx3, \sin3 etc.
+    {
+        trigger: "(\\\\${GREEK}|(?<!\\\\[A-Za-z]*)[A-Za-z])(\\d)",
+        replacement: "[[0]]_{[[1]]}",
+        options: "rmA",
+        priority: -1,
+        excludedMacros: ["pu", "ce"]
+    },
+
+    // Avoid Auto letter subscript
+    {
+        trigger: "\\\\(?!(?:${GREEK})[0-9])([A-Za-z]+)(\\d)",
+        replacement: "\\[[0]] [[1]]",
+        options: "rmA",
+        priority: 1,
+        description: "Add space after any non-Greek command when followed by a number."
     },
 ]
